@@ -1,6 +1,7 @@
 import { Persona } from "./persona.js";
 import { Estudiante } from "./estudiante.js";
 import { Animal } from "./animal.js";
+import { Perro } from "./perro.js";
 
 const respuestasPersonas = document.querySelector("#respuestasPersonas");
 const informacionPersona = document.querySelector("#informacionPersona");
@@ -21,4 +22,6 @@ informacionAnimal.addEventListener("submit", (e)=>{
     e.preventDefault();
     const animal1 = new Animal(Object.fromEntries(new FormData(e.target)));
     respuestasAnimal.appendChild(animal1.hacerSonido())
+    const perro1 = new Perro(Object.fromEntries(new FormData(e.target)));
+    respuestasAnimal.appendChild(perro1.moverCola())
 })

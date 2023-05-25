@@ -2,7 +2,7 @@ import { Persona } from "./persona.js";
 
 class Estudiante extends Persona {
     constructor({name,edad,sexo,carrera}){
-        super({name,edad,sexo});
+        super(name,edad,sexo);
         this.carrera = carrera;
     }
     estudiar(){
