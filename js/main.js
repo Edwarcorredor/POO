@@ -78,7 +78,10 @@ informacionEmpleado.addEventListener("submit", (e)=>{
     e.preventDefault();
     const empleado1 = new Empleado(Object.fromEntries(new FormData(e.target)));
     respuestasEmpleado.appendChild(empleado1.calcularSalarioAnual())
+    respuestasEmpleado.appendChild(Empleado.generarIdEmpleado())
     const gerente1 = new Gerente(Object.fromEntries(new FormData(e.target)));
     respuestasEmpleado.appendChild(gerente1.calcularSalarioAnual())
+    respuestasEmpleado.appendChild(Gerente.generarIdEmpleado())
+
 })
 
