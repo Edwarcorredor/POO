@@ -2,7 +2,7 @@ import { Animal } from "./animal.js";
 
 class Perro extends Animal {
     constructor({nameAnimal,edadAnimal,raza}){
-        super(nameAnimal,edadAnimal);
+        super({nameAnimal,edadAnimal});
         this.raza =raza;
     }
     moverCola(){

@@ -2,7 +2,7 @@ import { Figura } from "./figura.js";
 
 class Circulo extends Figura {
     constructor({color,area,radio}){
-        super(color,area);
+        super({color,area});
         this.radio = radio;
     }
     calcularArea(){

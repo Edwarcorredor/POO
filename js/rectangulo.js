@@ -2,7 +2,7 @@ import { Figura } from "./figura.js";
 
 class Rectangulo extends Figura {
     constructor({color,area,largo,ancho}){
-        super(color,area);
+        super({color,area});
         this.largo = largo;
         this.ancho = ancho;
     }

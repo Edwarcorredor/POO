@@ -2,7 +2,7 @@ import { Vehiculo } from "./vehiculo.js";
 
 class Coche extends Vehiculo {
     constructor({marca,modelo,velocidad,combustible}) {
-        super(marca,modelo,velocidad);
+        super({marca,modelo,velocidad});
         this.combustible = combustible;
     }
     acelerar(){

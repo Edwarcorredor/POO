@@ -7,6 +7,7 @@ import { Circulo } from "./circulo.js";
 import { Rectangulo } from "./rectangulo.js";
 import { Vehiculo } from "./vehiculo.js";
 import { Coche } from "./coche.js";
+import { Empleado } from "./empleado.js";
 
 const respuestasPersonas = document.querySelector("#respuestasPersonas");
 const informacionPersona = document.querySelector("#informacionPersona");
@@ -16,6 +17,8 @@ const informacionFigura = document.querySelector("#informacionFigura");
 const respuestasFigura = document.querySelector("#respuestasFigura");
 const informacionVehiculo = document.querySelector("#informacionVehiculo")
 const respuestasVehiculo = document.querySelector("#respuestasVehiculo")
+const informacionEmpleado = document.querySelector("#informacionEmpleado");
+const respuestasEmpleado = document.querySelector("#respuestasEmpleado");
 
 
 informacionPersona.addEventListener("submit", (e) => {
@@ -51,16 +54,27 @@ informacionVehiculo.addEventListener("submit", (e)=>{
     const vehiculo1 = new Vehiculo(Object.fromEntries(new FormData(e.target)));
     const coche1 = new Coche(Object.fromEntries(new FormData(e.target)));
     const btnAcelerar = `
-    <input type="button" value="Acelerar Vehiculo" class="btn btn-primary" class="acelerar">
-    <input type="button" value="Acelerar Coche" class="btn btn-primary" class="acelerar">
+    <input type="button" value="Acelerar Vehiculo" class="btn btn-primary acelerar">
+    <input type="button" value="Acelerar Coche" class="btn btn-primary acelerar">
+    <input type="button" value="Convertir a MPH" class="btn btn-primary acelerar">
     `
     respuestasVehiculo.innerHTML = btnAcelerar
-    const acelerar = document.querySelector(".acelerar")
+    const acelerar = document.querySelectorAll(".acelerar")
+    console.log(acelerar)
     acelerar[0].addEventListener("click", (e)=>{
             respuestasVehiculo.appendChild(vehiculo1.acelerar())
     })
     acelerar[1].addEventListener("click", (e)=>{
-            respuestasVehiculo.appendChild(vehiculo1.acelerar())
+            respuestasVehiculo.appendChild(coche1.acelerar())
     })
+    acelerar[2].addEventListener("click", (e)=>{
+            respuestasVehiculo.appendChild(Vehiculo.convertirKmHEnMph(coche1.getVelocidad))
+    })
+})
+
+informacionEmpleado.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    const empleado1 = new Empleado(Object.fromEntries(new FormData(e.target)));
+    respuestasEmpleado.appendChild(empleado1.calcularSalarioAnual())
 })
 

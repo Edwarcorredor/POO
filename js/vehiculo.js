@@ -10,6 +10,15 @@ class Vehiculo{
         decirVelocidad.innerHTML = `La velocidad del vehiculo es ${this.velocidad}`
         return decirVelocidad
     }
+    get getVelocidad(){
+        return this.velocidad
+    }
+    static convertirKmHEnMph(velocidad){
+        let decirKmHEnMph = document.createElement("p")
+        let Mph = velocidad/1.60934
+        decirKmHEnMph.innerHTML = `La velocidad del vehiculo es ${Mph} mph`
+        return decirKmHEnMph
+    }
 
 }
 
