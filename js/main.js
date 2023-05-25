@@ -10,5 +10,6 @@ informacion.addEventListener("submit", (e) => {
     respuestas.appendChild(persona1.saludar())
     const estudiante1 = new Estudiante(Object.fromEntries(new FormData(e.target)));
     respuestas.appendChild(estudiante1.saludar())
-    respuestas.appendChild(estudiante1.estudiar()) 
+    respuestas.appendChild(estudiante1.estudiar())
+    respuestas.appendChild(Persona.esMayorDeEdad(persona1.getEdad)) 
 })

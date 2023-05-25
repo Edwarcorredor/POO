@@ -9,6 +9,23 @@ class Persona{
         decirNombre.innerHTML = `Hola, mi nombre es ${this.name}`
         return decirNombre
     }
+    
+    get getEdad(){
+        return this.edad
+    }
+
+    static esMayorDeEdad(edad){
+        let resultado 
+        let decirResultado = document.createElement("p")
+        if(edad > 18){
+            resultado = true
+        }
+        else{
+            resultado = false
+        }
+        decirResultado.innerHTML = `¿Soy mayor de edad? Rta: ${resultado}`
+        return decirResultado
+    }
 }
 
 export {Persona}
