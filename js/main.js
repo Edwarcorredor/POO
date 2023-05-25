@@ -8,6 +8,8 @@ import { Rectangulo } from "./rectangulo.js";
 import { Vehiculo } from "./vehiculo.js";
 import { Coche } from "./coche.js";
 import { Empleado } from "./empleado.js";
+import { Gerente } from "./gerente.js";
+
 
 const respuestasPersonas = document.querySelector("#respuestasPersonas");
 const informacionPersona = document.querySelector("#informacionPersona");
@@ -76,5 +78,7 @@ informacionEmpleado.addEventListener("submit", (e)=>{
     e.preventDefault();
     const empleado1 = new Empleado(Object.fromEntries(new FormData(e.target)));
     respuestasEmpleado.appendChild(empleado1.calcularSalarioAnual())
+    const gerente1 = new Gerente(Object.fromEntries(new FormData(e.target)));
+    respuestasEmpleado.appendChild(gerente1.calcularSalarioAnual())
 })
 
