@@ -4,6 +4,7 @@ import { Animal } from "./animal.js";
 import { Perro } from "./perro.js";
 import { Figura } from "./figura.js";
 import { Circulo } from "./circulo.js";
+import { Rectangulo } from "./rectangulo.js";
 
 const respuestasPersonas = document.querySelector("#respuestasPersonas");
 const informacionPersona = document.querySelector("#informacionPersona");
@@ -35,5 +36,7 @@ informacionFigura.addEventListener("submit", (e)=>{
     const figura1 = new Figura(Object.fromEntries(new FormData(e.target)));
     respuestasFigura.appendChild(figura1.calcularArea())
     const circulo1 = new Circulo(Object.fromEntries(new FormData(e.target)));
-    respuestasFigura.appendChild(circulo1.calcularArea()); 
+    respuestasFigura.appendChild(circulo1.calcularArea());
+    const rectangulo1 = new Rectangulo(Object.fromEntries(new FormData(e.target)));
+    respuestasFigura.appendChild(rectangulo1.calcularArea())
 });
