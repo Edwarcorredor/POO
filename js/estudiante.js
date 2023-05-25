@@ -2,7 +2,7 @@ import { Persona } from "./persona.js";
 
 class Estudiante extends Persona {
     constructor({name,edad,sexo,carrera}){
-        super(name,edad,sexo);
+        super({name,edad,sexo});
         this.carrera = carrera;
     }
     estudiar(){
@@ -10,6 +10,7 @@ class Estudiante extends Persona {
         decirCarrera.innerHTML = `La carrera que estudio actualmente es ${this.carrera}`
         return decirCarrera
     }
+    
 }
 
 export {Estudiante}

@@ -1,4 +1,5 @@
 class Persona{
+
     constructor({name,edad,sexo}){
         this.name = name
         this.edad = edad
